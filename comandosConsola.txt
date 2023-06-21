@@ -1,0 +1,3 @@
+COMANDOS POR CONSOLA PARA INTELLIJ
+
+ctrl + alt + l  = dar formato al archivo
