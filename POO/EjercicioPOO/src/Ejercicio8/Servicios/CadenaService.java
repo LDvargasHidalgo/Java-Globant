@@ -20,6 +20,7 @@ public class CadenaService {
     public void CantidadVocales(Cadena cadena) {
         int countVocales = 0;
         for (int i = 0; i < cadena.getLongitud(); i++) {
+            int longitud = cadena.getLongitud();
             char letra = cadena.getFrase().charAt(i);
             letra = Character.toLowerCase(letra);
             if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
@@ -34,7 +35,7 @@ public class CadenaService {
 
     public void FraseInversa(Cadena cadena) {
         StringBuilder fraseInversal = new StringBuilder();
-        for (int i = cadena.getLongitud() - 1; i >= 0; i--) {
+        for (int i = cadena.getLongitud()-1 ; i >= 0; i--) {
             fraseInversal.append(cadena.getFrase().charAt(i));
         }
         String fraseInversaF = fraseInversal.toString();
@@ -60,16 +61,19 @@ public class CadenaService {
 
     // COMPARAR LONGITUD
     public void CompararLongitud(Cadena cadena) {
+        String fraseSinEspacios = cadena.getFrase().replace(" ","");
+        int cantidadLetrasFrase = fraseSinEspacios.length();
         System.out.println("Ingrese una nueva frase a comparar ");
         scan.nextLine();
         String newFrase = scan.nextLine();
-        int cantidadLetrasNewFrase = newFrase.length();
+        String newFraseSinEspacios = newFrase.replace(" ","");
+        int cantidadLetrasNewFrase = newFraseSinEspacios.length();
         System.out.println("Esta es la nueva frase "+newFrase);
 
         if (cadena.getLongitud() == newFrase.length()) {
             System.out.println("La longitud de las dos frases es de " + newFrase.length() + " letras ");
         } else {
-            System.out.println("La longitud de la frase " + cadena.getFrase() + " es de " + cadena.getLongitud()
+            System.out.println("La longitud de la frase " + cadena.getFrase() + " es de " + cantidadLetrasFrase
                     + " letras y la longitud de la nueva frase  " + newFrase + " es de: " + cantidadLetrasNewFrase + " letras");
         }
     }
