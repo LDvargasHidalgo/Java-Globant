@@ -15,6 +15,7 @@ public class Main_11 {
         mes = scan.nextInt();
         System.out.println("Ingresa un año");
         anio = scan.nextInt();
+        Date fecha = new Date(anio, mes, dia);
 
         int anioActual = fechaActual.getYear()+1900;
         int mesActual = fechaActual.getMonth()+1;
@@ -27,6 +28,8 @@ public class Main_11 {
         } else if (mesActual<=mes && diaActual<dia) {
             aniosTranscurridos--;
         }
+
+        System.out.println("Fecha actual"+fechaActual);
 
         System.out.println("Han transcurrido  "+aniosTranscurridos + " años");
     }
